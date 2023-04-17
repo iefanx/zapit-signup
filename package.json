@@ -1,0 +1,13 @@
+{
+    "name": "dev-test",
+    "version": "1.0.0",
+    "scripts": {
+      "start": "vercel dev",
+      "build": "echo 'No build step'",
+      "deploy": "vercel --prod"
+    },
+    "dependencies": {
+      "node-fetch": "^2.6.6"
+    }
+  }
+  
