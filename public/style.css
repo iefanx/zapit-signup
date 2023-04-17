@@ -50,6 +50,19 @@ h1 {
     margin-bottom: 1rem;
     text-transform: capitalize;
   }
+
+
+h2 {
+    font-size: 15px;
+    font-weight: bold;
+    color: #4a4848;
+    text-align: left;
+    margin-bottom: 20px;
+    font-family: Courier, monospace;
+    font-style: italic;
+    margin-left: 10px;
+    margin-right: 10px;
+}
   
   input::placeholder {
     color: #888;
