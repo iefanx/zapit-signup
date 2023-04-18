@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <img src="logo.png" alt="Logo" class="logo">
+        <h2>Important: This is not even in beta, it's a test. Please do not store your Bitcoin in our wallets. </h2>
+        <form id="create-form">
+            <div class="input-group">
+                <input type="text" id="user-name" name="user-name" placeholder="User Name" required>
+            </div>
+            <div class="input-group">
+                <input type="text" id="wallet-name" name="wallet-name" placeholder="Wallet Name" required>
+            </div>
+            <div class="input-group">
+                <input type="text" id="email" name="email" placeholder="PubKey" required>
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" name="password" placeholder="Password">
+            </div>
+            <button type="submit">Create User & Wallet</button>
+        </form>
+
+        <div id="result">
+
+            <div id="result-text"></div>
+        </div>
+        <button class="hbutton" onclick="window.location.href='https://www.zapit.live'" target="_blank">back to home</button>
+
+
+    </div>
+
+
+
+    <script type="text/javascript" src="./script.js"></script>
+</body>
+
+</html>
