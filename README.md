@@ -1,4 +1,5 @@
-Simple User Wallet Creation Form
+# Zapit Signup
+
 This repository contains a simple form to create a user and wallet, and display the result on the page. The form uses plain JavaScript and interacts with a serverless function to store the data.
 
 Features
