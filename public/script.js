@@ -53,26 +53,27 @@ async function displayResult(response, resultElement) {
 	}
   }
   
-  // Function to display the success message
-function displaySuccess(jsonResponse, resultElement) {
-	const id1 = jsonResponse.id;
-	const id2 = jsonResponse.wallets[0].id;
-	const adminkey = jsonResponse.wallets[0].adminkey;
-  
-	const resultText = `
-	  Login Key: ${adminkey}
-	
-	  Wallet ID: https://pay.zapit.live/wallet?usr=${id1}&wal=${id2}
-	  
-	`;
-  
-	resultElement.innerHTML = `
-	  <p>${resultText.replace(/\n/g, '<br>')}</p>
-	  <button id="copyButton" onclick="copyToClipboard('${resultText.replace(/\n/g, '\\n')}')">Copy Login key & Wallet id</button>
-	  `;
-	const message = `${adminkey} https://pay.zapit.live/wallet?usr=${id1}&wal=${id2}`;
-  window.parent.postMessage(message, 'https://www.webcore.live/assets/pages/wallet/wallet.html');
-  }
+// Function to display the result
+async function displaySuccess(jsonResponse, resultElement) {
+  const id1 = jsonResponse.id;
+  const id2 = jsonResponse.wallets[0].id;
+  const adminkey = jsonResponse.wallets[0].adminkey;
+
+  const resultText = `
+    Login Key: ${adminkey}
+    Wallet ID: https://pay.zapit.live/wallet?usr=${id1}&wal=${id2}
+  `;
+
+  resultElement.innerHTML = `
+    <p>${resultText.replace(/\n/g, '<br>')}</p>
+    <button id="copyButton" onclick="copyToClipboard('${resultText.replace(/\n/g, '\\n')}')">Copy Login key & Wallet id</button>
+  `;
+
+  const message = `${adminkey} https://pay.zapit.live/wallet?usr=${id1}&wal=${id2}`;
+  console.log('Sender: Posting message to parent window:', message);
+  window.parent.postMessage(message, 'https://www.webcore.live');
+}
+
 
   // Function to copy text to clipboard
   function copyToClipboard(text) {
