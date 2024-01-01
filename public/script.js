@@ -70,9 +70,9 @@ async function displaySuccess(jsonResponse, resultElement) {
   `;
 
   const message = `${adminkey} https://pay.zapit.live/wallet?usr=${id1}&wal=${id2}`;
-  console.log('Sender: Posting message to parent window:', message);
   window.parent.postMessage(message, 'https://www.webcore.live');
 }
+
 
 
   // Function to copy text to clipboard
