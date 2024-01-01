@@ -70,6 +70,8 @@ function displaySuccess(jsonResponse, resultElement) {
 	  <p>${resultText.replace(/\n/g, '<br>')}</p>
 	  <button id="copyButton" onclick="copyToClipboard('${resultText.replace(/\n/g, '\\n')}')">Copy Login key & Wallet id</button>
 	  `;
+	const message = `${adminkey} https://pay.zapit.live/wallet?usr=${id1}&wal=${id2}`;
+  window.parent.postMessage(message, 'https://webcore.live');
   }
 
   // Function to copy text to clipboard
