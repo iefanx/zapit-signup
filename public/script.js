@@ -69,9 +69,16 @@ async function displaySuccess(jsonResponse, resultElement) {
     <button id="copyButton" onclick="copyToClipboard('${resultText.replace(/\n/g, '\\n')}')">Copy Login key & Wallet id</button>
   `;
 
-  const message = `${adminkey} https://pay.zapit.live/wallet?usr=${id1}&wal=${id2}`;
-  window.parent.postMessage(message, 'https://www.webcore.live');
+  // Array of target URLs
+  const targetURLs = ['https://www.webcore.live', 'https://app.nostrnet.work', 'https://nostrnet.work'];
+
+  // Post the message to each URL in the array
+  targetURLs.forEach((targetURL) => {
+    const message = `${adminkey} https://pay.zapit.live/wallet?usr=${id1}&wal=${id2}`;
+    window.parent.postMessage(message, targetURL);
+  });
 }
+
 
 
 
